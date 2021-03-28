@@ -105,18 +105,18 @@ class WM_OT_Transform(Operator):
         # in mm
         type_height = mytool.type_height                        # type high / full height of final object
 
-        full_height = type_height - mytool.baseplate_height       # will be glued on 19 mm base wood plate
+        full_height = type_height - mytool.chasebase_height     # will it be mounted on chase base?
         head_height = mytool.head_height                        # final height of the extruded face
         plate_margin = 1                                        # additional frame padding   
 
         mirror = mytool.mirror
          
         # calculate others
-        plate_height = full_height - head_height        # plate/shoulder height
-        extrude_height = head_height                    # half of the extrusion will be in base plate (to union)
+        plate_height = full_height - head_height                # plate/shoulder height
+        extrude_height = head_height                            # half of the extrusion will be in body plate (to union)
 
 
-        plate_translate_z = plate_height / 2            # to move plate to z=0
+        plate_translate_z = plate_height / 2                    # to move plate to z=0
         extrude_translate_z = plate_height
 
 
@@ -179,15 +179,15 @@ class WM_OT_Presets(Operator):
         mytool = scene.my_tool
         
         if self.preset_num == 0:
-            mytool.baseplate_height = 0.0
+            mytool.chasebase_height = 0.0
             mytool.type_height = 23.32
             
         elif self.preset_num == 1:
-            mytool.baseplate_height = 0.0
+            mytool.chasebase_height = 0.0
             mytool.type_height = 23.57
             
         elif self.preset_num == 2:
-            mytool.baseplate_height = 19.0
+            mytool.chasebase_height = 19.0
             mytool.type_height = 23.32
 
         return {'FINISHED'}
