@@ -2,6 +2,7 @@
 SVG to Letterpress Add-on with ability to set type hight of your letterpress machine, head height (extrusion), additional margin for base/body and chase base height if you use one. It can also mirror the final object if needed.
 
 ![script screenshot](blender-svg-letterpress.png)
+![final product](product.jpg)
 
 ## How to use it
 
